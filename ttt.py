@@ -21,7 +21,8 @@ def checkWinCondition(board,player):
     # Check rows
     # player = 'X' oder 'O'
 
-    return [player]*board.size in board.grid
+    if [player]*board.size in board.grid:
+        return True
     
 
     # Check columns
