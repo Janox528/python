@@ -16,40 +16,21 @@ class Board:
                 else:
                     row_temp += symbol + " "
             print(row_temp)
-            
+
 def checkWinCondition(board):
     # Check rows
     
     won = False
-    for row in board.grid:
-        matches = 0
-        symbol = row[0]
-        for block in row:
-            if block == symbol and symbol != ' ':
-                matches += 1
-            if matches >= board.size:
-                print('You won!')
-                print('row')
-                won = True
-                break
-        if won:
-            break
+
+    if ['X']*board.size in board.grid or ['O']*board.size in board.grid:
+        won = True
+    
 
     # Check columns
     
-    for i in range(0, board.size):
-        matches = 0
-        symbol = board.grid[0][i]
-        for k in range(0, board.size):
-            if board.grid[k][i] == symbol and symbol != ' ':
-                matches += 1
-            if matches >= board.size:
-                print('You won')
-                print('column')
-                won = True
-                break
-        if won:
-            break
+    for j in range(board.size):
+        if [board.grid[i][j] for i in range(board.size)] in [['X']*board.size,['O']*board.size]:
+            won = True
 
     # Check diagonal \
     
