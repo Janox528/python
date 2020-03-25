@@ -34,19 +34,8 @@ def checkWinCondition(board):
 
     # Check diagonal \
     
-    m = 0
-    n = 0
-    matches = 0
-    symbol = board.grid[0][0]
-    while (m < board.size and n < board.size and not won):
-        if (symbol == board.grid[m][n] and symbol != ' '):
-            matches += 1
-        if matches >= board.size:
-            print('You won')
-            print('diagonal \\')
-            won = True
-        m += 1
-        n += 1
+    if [board.grid[i][i] for i in range(board.size)] in [['X']*board.size,['O']*board.size] or [board.grid[board.size-1-i][i] for i in range(board.size)] in [['X']*board.size,['O']*board.size]:
+        won = True
 
     # Check diagonal /
     
