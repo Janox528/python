@@ -34,7 +34,8 @@ def checkWinCondition(board):
 
     # Check diagonal \
     
-    if [board.grid[i][i] for i in range(board.size)] in [['X']*board.size,['O']*board.size] or [board.grid[board.size-1-i][i] for i in range(board.size)] in [['X']*board.size,['O']*board.size]:
+    if [board.grid[i][i] for i in range(board.size)] in [['X']*board.size,['O']*board.size] or \
+       [board.grid[board.size-1-i][i] for i in range(board.size)] in [['X']*board.size,['O']*board.size]:
         won = True
 
 
