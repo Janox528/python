@@ -88,7 +88,8 @@ def main():
                 y = int(digits[1])
                 
             except ValueError:
-                print('Invalid input. Please try again.')
+                pass
+            
             if board.checkMove(x,y):
                 board.move(x,y)
                 game_over = board.checkWinCondition()
