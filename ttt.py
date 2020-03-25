@@ -31,8 +31,8 @@ class Board:
                 return True
 
         # Check diagonal \
-        if [self.grid[i][i] for i in range(self.size)] == [[player]*self.size] or \
-            [self.grid[self.size-1-i][i] for i in range(self.size)] == [[player]*self.size]:
+        if [self.grid[i][i] for i in range(self.size)] == [player]*self.size or \
+            [self.grid[self.size-1-i][i] for i in range(self.size)] == [player]*self.size:
             return True
         
         return False
@@ -44,10 +44,10 @@ def displayMenu():
 
 def main():
     board = Board(3)
-    #board.grid[0][0] = 'X'
+    board.grid[0][0] = 'X'
     board.grid[0][1] = 'X'
     board.grid[0][2] = 'O'
-    #board.grid[2][1] = 'X'
+    board.grid[2][1] = 'X'
     board.grid[1][1] = 'O'
     board.grid[2][2] = 'X'
     board.grid[2][0] = 'O'
