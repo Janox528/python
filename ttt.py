@@ -81,7 +81,7 @@ def main():
             
             try:
                 digits= ''
-                while not digits.count(' ') == 1:
+                while not digits.count(' ') == 1 or digits == ' ':
                     digits = input('Enter two digits e.q. seperated by space eg. 5 6: ')
                 digits = digits.split()
                 x = int(digits[0])
